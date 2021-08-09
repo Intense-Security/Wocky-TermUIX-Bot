@@ -43,7 +43,12 @@ class MyClient(discord.Client):
             
             elif "img2txt" in messageContent:
                 url = GetCode(message.content.split(" ")[1])
-                await message.channel.send(f"ASNI Text URL: {url}")
+                await message.channel.send(f"ASNI Code URL: https://wocky.pw/termuix/asni/{url}")
+
+            elif "gradient_fade" in messageContent:
+                arg = message.content.split(" ")
+                url = WockyTermUIX.gradient_fade(arg[1], arg[2], messageContent.replace(f"{arg[0]} {arg[1]} {arg[2]} ", ""))
+                await message.channel.send(f"```{url}```")
             
         messageattachments = message.attachments
         if len(messageattachments) > 0:
