@@ -31,4 +31,7 @@ class WockyTermUIX:
     ## method -> gradient_fade(color1, color2, text)
     ## description -> converting text into gradient color fade!
     def gradient_fade(color1, color2, text):
-        return requests.get(f"https://wocky.pw/termuix/?key=lulzsec&action=gradient-fade-save&text={text}&color1={color1}&color2={color2}").text
+        lol = requests.get(f"https://wocky.pw/termuix/?key=lulzsec&action=gradient-fade&text={text}&color1={color1}&color2={color2}").text
+        print(lol)
+        return lol
+        
